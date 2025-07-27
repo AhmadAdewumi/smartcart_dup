@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: smartcart_dup
+
+  ai:
+    openai:
+      api-key: ${API_KEY}
+      base-url: https://openrouter.ai/api
+      chat:
+        options:
+          model: mistralai/mistral-small-3.2-24b-instruct:free
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/smartcart_dup
+    username: postgres
+    password: 2006Ahmad.
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+#  ai:
+#    ollama:
+#      embedding:
+#        model: nomic-embed-text
+#      chat:
+#        model: llama3.2
+
+server:
+  port: 8082
+
+logging:
+  level:
+    org.springframework.ai: DEBUG
